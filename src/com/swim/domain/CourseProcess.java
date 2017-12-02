@@ -1,11 +1,11 @@
 package com.swim.domain;
 
-public class CourseProgress {
+public class CourseProcess {
 	private int uid; 
 	private int ctid;
 	private int chid; 
 	private String pdate; //上次学习的时间
-	private String lastlearn;//记录上次看到哪
+	private String lastlearn;//记录上次看到哪一章
 	public int getUid() {
 		return uid;
 	}
