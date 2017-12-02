@@ -7,7 +7,7 @@ import com.swim.domain.CourseComment;
 
 public interface icommentservice {
 		//评论课程
-		public List<CourseComment> submitCommentbyuser(int uid,int ctid,String content)throws SQLException, ClassNotFoundException;
+		public CourseComment submitcomment(CourseComment cc) throws ClassNotFoundException, SQLException;
 		//点赞评论
 		public int goodComment(int uid,int ccid) throws SQLException, ClassNotFoundException;
 		//反对评论

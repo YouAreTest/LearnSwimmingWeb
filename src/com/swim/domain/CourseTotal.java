@@ -11,7 +11,18 @@ public class CourseTotal {
 	private String studentnumber;//课程已经参与的学生数目
 	private String ctbrief;//课程简介
 	private String img;//课程封面
+	private int subscribe;//课程是否被订阅 
+	//默认是0 没有被订阅，数据库里面没有增加这一项，这一项仅仅是针对一个用户
+	//如果是0，前台的按钮内容显示的就是订阅，函数就是subscribeCoursebyuser
+	//如果是1，前台按钮就是已订阅，函数就是cancelCoursebyuser
 	
+	
+	public int getSubscribe() {
+		return subscribe;
+	}
+	public void setSubscribe(int subscribe) {
+		this.subscribe = subscribe;
+	}
 	public int getCtid() {
 		return ctid;
 	}

@@ -1,13 +1,15 @@
-package com.swim.dao.impl;
+ package com.swim.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
+import java.util.Random;
 
 import com.swim.database.DatabaseConnection;
+import com.swim.domain.CourseTotal;
+import com.swim.domain.SubscribeCourse;
 import com.swim.domain.User;
 import com.swim.idao.iuserdao;
 
@@ -19,6 +21,9 @@ public class userdao implements iuserdao {
 	public User login(User u) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		User realuser=new User();
+		 Random random = new Random();
+		 int imgnum = random.nextInt(5)%(5) + 1;
+		 String imgUrl="./image/touxiang/"+imgnum+".jpg";
 		try(Connection conn=defaultConnection.openConnection()){
 			String userid=u.getUserid();
 			String userpassword=u.getUserpassword();
@@ -38,6 +43,7 @@ public class userdao implements iuserdao {
 					realuser.setEmail(rs.getString("email"));
 					realuser.setEducation(rs.getString("education"));
 					realuser.setContent(rs.getString("content"));
+					realuser.setImg(imgUrl);
 					return realuser;
 				}
 			}
@@ -106,7 +112,7 @@ public class userdao implements iuserdao {
 	}
 
 	@Override
-	public List<String> getallCoursebyuid(int uid) throws ClassNotFoundException, SQLException {
+	public List<CourseTotal> getallCoursebyuid(int uid) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}

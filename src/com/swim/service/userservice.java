@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.swim.dao.impl.userdao;
+import com.swim.domain.CourseTotal;
+import com.swim.domain.SubscribeCourse;
 import com.swim.domain.User;
 import com.swim.idao.iuserdao;
 import com.swim.iservice.iuserservice;
@@ -44,7 +46,7 @@ public class userservice implements iuserservice{
 	}
 	 */
 	@Override
-	public List<String> getallCoursebyuid(int uid) throws ClassNotFoundException, SQLException {
+	public List<CourseTotal> getallCoursebyuid(int uid) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		return ud.getallCoursebyuid(uid);
 	}

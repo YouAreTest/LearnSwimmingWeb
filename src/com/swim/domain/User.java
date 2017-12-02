@@ -15,7 +15,7 @@ public class User {
 	private String tele;//用户电话
 	private String email;//用户电子邮件
 	private String usersex;//用户性别
-	private String userage;//用户年龄
+	private int userage;//用户年龄
 	
 	
 	
@@ -25,10 +25,10 @@ public class User {
 	public void setUsersex(String usersex) {
 		this.usersex = usersex;
 	}
-	public String getUserage() {
+	public int getUserage() {
 		return userage;
 	}
-	public void setUserage(String userage) {
+	public void setUserage(int userage) {
 		this.userage = userage;
 	}
 	public int getUid() {

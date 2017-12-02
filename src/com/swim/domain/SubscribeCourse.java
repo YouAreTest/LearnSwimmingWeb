@@ -7,6 +7,7 @@ package com.swim.domain;
 public class SubscribeCourse {
 	private int uid;
 	private int ctid;
+
 	private String sdate;//¶©ÔÄµÄÊ±¼ä
 	public int getUid() {
 		return uid;
@@ -20,6 +21,8 @@ public class SubscribeCourse {
 	public void setCtid(int ctid) {
 		this.ctid = ctid;
 	}
+	
+	
 	public String getSdate() {
 		return sdate;
 	}
