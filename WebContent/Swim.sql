@@ -36,7 +36,6 @@ primary key(ctid,chid)
 create table subscribeCourse(
 uid int,
 ctid int,
-ctname varchar(255);
 sdate datetime,
 primary key(uid,ctid),
 foreign key(uid) references user(uid),
