@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.head-portrait {
+	float: left;
+	background-color: burlywood;
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	border-radius: 23px;
+	line-height: 45px;
+	text-align: center;
+}
+
+textarea {
+	display: block;
+	width: 65%;
+	min-height: 62px;
+	padding: 8px;
+	color: #555;
+	font-size: 14px;
+	resize: none;
+	line-height: 18px;
+	font-family: "Microsoft YaHei";
+}
+
+.left {
+	width: 70%;
+	position: relative;
+	left: 55px;
+}
+
+.right {
+	position: absolute;
+	left: 969px;
+	top: 21px;
+	width: 300px;
+}
+
+.tab-content div ul li {
+	list-style: none;
+}
+
+.right div .teacher-name {
+	position: relative;
+	top: 10px;
+	left: 17px;
+}
+
+#home div {
+	position: relative;
+	left: 23px;
+	top: 20px;
+	
+}
+
+.intro {
+	height: 150px;
+}
