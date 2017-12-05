@@ -2,6 +2,8 @@ package com.swim.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -72,6 +74,18 @@ public class SubmitComment extends HttpServlet {
 		}
 		if(comment!=null){
 			System.out.println("¡Ù—‘≥…π¶");
+			List<CourseComment> cc2=new ArrayList<CourseComment>();
+			try {
+				cc2=ics.showCommentbypage(ctid2);
+			} catch (ClassNotFoundException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			for(int i=0;i<cc2.lastIndexOf(cc2);i++) {
+				//CourseComment c=(CourseComment)cc2[i];
+				//request.setAttribute("sex1",c.getCcid());
+			}
+			
 			response.sendRedirect("    ?ctid="+ctid);
 			return;
 		}

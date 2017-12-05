@@ -3,7 +3,8 @@ package com.swim.domain;
 public class dianzanorfandui {
 	private int ccid;//帖子编号
 	private int uid;//用户编号
-	private int judge;//是否点赞过
+	private int judge;//是否点赞过,0:该用户未点过赞，1：已点过赞
+	
 	
 	public int getCcid() {
 		return ccid;
@@ -23,6 +24,7 @@ public class dianzanorfandui {
 	public void setJudge(int judge) {
 		this.judge = judge;
 	}
+	
 	
 
 }
