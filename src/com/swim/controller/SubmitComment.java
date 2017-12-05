@@ -81,12 +81,21 @@ public class SubmitComment extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			/*for(CourseComment cc2s:cc2) {
 			for(int i=0;i<cc2.lastIndexOf(cc2);i++) {
-				//CourseComment c=(CourseComment)cc2[i];
-				//request.setAttribute("sex1",c.getCcid());
+				
+				request.setAttribute("sex1",cc2s[i]);
 			}
+			}
+			*/
+			if(cc2!=null) {
+			request.setAttribute("commentlist", cc2);
 			
 			response.sendRedirect("    ?ctid="+ctid);
+			}
+			else {
+				System.out.println("Êä³öÆÀÂÛÊ§°Ü");
+			}
 			return;
 		}
 		
