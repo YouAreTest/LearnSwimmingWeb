@@ -40,8 +40,45 @@
 	vertical-align: middle;
 }
 </style>
-
+<!-- Ajax -->
 <script type="text/javascript">
+var xmlhttp;
+if(window.XMLHttpRequest){
+	xmlhttp=new XMLHttpRequest();
+}else{
+	xmlhttp = new ActiveXObject("Microsoft.XMLHttp");
+}
+function subscribe(unid){
+	xmlhttp.open("GET","subscribeuniversity?universityid="+unid,true);
+	xmlhttp.send();
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4&&xmlhttp.status==200){
+			var rs = JSON.parse(xmlhttp.responseText);
+			alert(rs);
+			$("#subrs").remove();
+			$("#universityinfo").append("<button id=\"cancelrs\" type=\"button\" class=\"btn btn-success\" onclick=\"cancelsubscribe("+rs.status+")\">已关注</button>")
+			
+		}
+	};
+}
+function cancelsubscribe(unid){
+	xmlhttp.open("GET","cancelsubscribeuniversity?universityid="+unid,true);
+	xmlhttp.send();
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4&&xmlhttp.status==200){
+			var rs = JSON.parse(xmlhttp.responseText);
+			
+			//alert(rs);
+			$("#cancelrs").remove();
+			$("#universityinfo").append("<button id=\"subrs\" type=\"button\" class=\"btn btn-success\" onclick=\"subscribe("+rs.status+")\">+关注</button>")
+			
+		}
+	};
+}
+</script>
+<script type="text/javascript">
+
+
 	(function($) {
 		$(function() {
 			nav();
@@ -127,7 +164,7 @@
 	</div>
 	<div class="video" width="320" height="240" controls>
 		<video >
-			<source src="./video/Wildlife.wmv" type="video/webm">
+			<source src="./video/example.mp4" type="video/mp4">
 			<source src="" type="">
 		</video>
 		
