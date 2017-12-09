@@ -98,6 +98,27 @@
 
 	})(jQuery);
 </script>
+<script type="text/javascript">
+var xmlhttp;
+if(window.XMLHttpRequest){
+	xmlhttp=new XMLHttpRequest();
+}else{
+	xmlhttp = new ActiveXObject("Microsoft.XMLHttp");
+}
+function subscribe(unid){
+	xmlhttp.open("GET","subscribeuniversity?universityid="+unid,true);
+	xmlhttp.send();
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState==4&&xmlhttp.status==200){
+			var rs = JSON.parse(xmlhttp.responseText);
+			alert(rs);
+			$("#subrs").remove();
+			$("#universityinfo").append("<button id=\"cancelrs\" type=\"button\" class=\"btn btn-success\" onclick=\"cancelsubscribe("+rs.status+")\">已关注</button>")
+			
+		}
+	};
+}
+
 </head>
 <body>
 	<header> <!-- <div class="trapezoid"></div> -->
