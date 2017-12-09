@@ -14,14 +14,17 @@ import com.swim.domain.dianzanorfandui;
 import com.swim.iservice.icommentservice;
 import com.swim.service.commentservice;
 
-
-@WebServlet("/dianzan")
-public class dianzan extends HttpServlet {
-	private static final long serialVersionUID = 1L;       
+/**
+ * Servlet implementation class fandui
+ */
+@WebServlet("/fandui")
+public class fandui extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public dianzan() {
+    public fandui() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -53,7 +56,7 @@ public class dianzan extends HttpServlet {
 			icommentservice dz=new commentservice();
 			dianzanorfandui dz2=new dianzanorfandui();
 			try {
-				dz2 = dz.goodComment(uid, ccid);
+				dz2 = dz.badComment(uid, ccid);
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -63,18 +66,19 @@ public class dianzan extends HttpServlet {
 			}
 			if(dz2.getJudge()==1) 
 			{
-				System.out.println("您点赞成功servlet");
+				System.out.println("您反对成功servlet");
 			}
 			else if(dz2.getJudge()==0) {
-				System.out.println("您已取消点赞servlet");
+				System.out.println("您已取消反对servlet");
 			}
 			else {
-				System.out.println("点赞操作未成功servlet");
+				System.out.println("反对操作未成功servlet");
 			}
 				
 		}
 		
 		return;
 	}
+	
 
 }

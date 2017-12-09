@@ -12,6 +12,7 @@ public class CourseComment {
 	private int ctid;
 	private int goodnumber;//点赞数
 	private int badnumber;//反对数
+	private User user;  //user类
 	public int getCcid() {
 		return ccid;
 	}
@@ -53,6 +54,12 @@ public class CourseComment {
 	}
 	public void setBadnumber(int badnumber) {
 		this.badnumber = badnumber;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 
