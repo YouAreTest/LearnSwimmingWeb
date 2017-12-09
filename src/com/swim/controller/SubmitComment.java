@@ -81,8 +81,7 @@ public class SubmitComment extends HttpServlet {
 				e.printStackTrace();
 			}
 			/*for(CourseComment cc2s:cc2) {
-			for(int i=0;i<cc2.lastIndexOf(cc2);i++) {
-				
+			for(int i=0;i<cc2.lastIndexOf(cc2);i++) {	
 				request.setAttribute("sex1",cc2s[i]);
 			}
 			}

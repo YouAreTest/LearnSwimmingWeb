@@ -29,5 +29,6 @@ public  class commentservice implements icommentservice {
 		 @Override
 	public dianzanorfandui badComment(int uid,int ccid) throws SQLException, ClassNotFoundException{
 			 return icd.badComment(uid, ccid);
+			 
     }	 
 }

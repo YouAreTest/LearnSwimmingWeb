@@ -15,6 +15,7 @@ public class dianzanorfandui {
 	public int getUid() {
 		return uid;
 	}
+
 	public void setUid(int uid) {
 		this.uid = uid;
 	}

@@ -16,5 +16,4 @@ public interface icommentservice {
 		//·´¶ÔÆÀÂÛ
 	   public dianzanorfandui badComment(int uid,int ccid) throws SQLException, ClassNotFoundException;
 
-	
 }

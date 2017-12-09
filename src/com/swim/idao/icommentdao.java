@@ -18,3 +18,4 @@ public interface icommentdao {
     public dianzanorfandui badComment(int uid,int ccid) throws SQLException, ClassNotFoundException;
 
 }
+

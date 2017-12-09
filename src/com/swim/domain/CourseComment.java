@@ -2,7 +2,7 @@ package com.swim.domain;
 /**
  * 课程评价表
  * @author Chan
- *
+
  */
 public class CourseComment {
 	private int ccid;//评价的编号

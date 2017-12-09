@@ -55,6 +55,7 @@ public class dianzan extends HttpServlet {
 			try {
 				dz2 = dz.goodComment(uid, ccid);
 			} catch (ClassNotFoundException e) {
+				
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (SQLException e) {
