@@ -1,9 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-   <!-- 课程学习页 -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- 课程学习页 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,6 +19,7 @@
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="./css/header.css">
 <link rel="stylesheet" href="./css/LearnCourse.css">
+<link rel="stylesheet" href="./css/head-portrait.css">
 <style type="text/css">
 * {
 	margin: 0;
@@ -40,45 +36,8 @@
 	vertical-align: middle;
 }
 </style>
-<!-- Ajax -->
-<script type="text/javascript">
-var xmlhttp;
-if(window.XMLHttpRequest){
-	xmlhttp=new XMLHttpRequest();
-}else{
-	xmlhttp = new ActiveXObject("Microsoft.XMLHttp");
-}
-function subscribe(unid){
-	xmlhttp.open("GET","subscribeuniversity?universityid="+unid,true);
-	xmlhttp.send();
-	xmlhttp.onreadystatechange=function(){
-		if(xmlhttp.readyState==4&&xmlhttp.status==200){
-			var rs = JSON.parse(xmlhttp.responseText);
-			alert(rs);
-			$("#subrs").remove();
-			$("#universityinfo").append("<button id=\"cancelrs\" type=\"button\" class=\"btn btn-success\" onclick=\"cancelsubscribe("+rs.status+")\">已关注</button>")
-			
-		}
-	};
-}
-function cancelsubscribe(unid){
-	xmlhttp.open("GET","cancelsubscribeuniversity?universityid="+unid,true);
-	xmlhttp.send();
-	xmlhttp.onreadystatechange=function(){
-		if(xmlhttp.readyState==4&&xmlhttp.status==200){
-			var rs = JSON.parse(xmlhttp.responseText);
-			
-			//alert(rs);
-			$("#cancelrs").remove();
-			$("#universityinfo").append("<button id=\"subrs\" type=\"button\" class=\"btn btn-success\" onclick=\"subscribe("+rs.status+")\">+关注</button>")
-			
-		}
-	};
-}
-</script>
-<script type="text/javascript">
 
-
+<script type="text/javascript">
 	(function($) {
 		$(function() {
 			nav();
@@ -120,7 +79,22 @@ function cancelsubscribe(unid){
 					nav.removeClass("nav_scroll");
 				}
 			});
-		})
+		});
+
+		$(document).ready(function() {
+
+			$(".post-comment div span").click(function() {
+				var color = $(this).css("color");
+				if (color != "red")
+					$(this).css({
+						"color" : "red"
+					});
+				else if (color == "red")
+					$(this).css({
+						"color" : "blue"
+					})
+			});
+		});
 
 	})(jQuery);
 </script>
@@ -149,61 +123,69 @@ function cancelsubscribe(unid){
 
 	<section>
 	<div class="top">
-	<h2 class="course-name" name="course-name">XXX课程</h2>
-	<div class="course-info">
-		<ul>
-			<li><button class="begin">开始学习</button></li>
-			<li>学习人数<br> <span name=""></span></li>
-			<li>课程时长<br> <span></span></li>
-			<li>课程评分<br> <span></span></li>
-		</ul>
+		<h2 class="course-name" name="course-name">XXX课程</h2>
+		<div class="course-info">
+			<ul>
+				<li><button class="begin">开始学习</button></li>
+				<li>学习人数<br> <span name=""></span></li>
+				<li>课程时长<br> <span></span></li>
+				<li>课程评分<br> <span></span></li>
+			</ul>
+		</div>
+		<p class="intro">
+			<span>课程简介：</span>
+		</p>
 	</div>
-	<p class="intro">
-		<span >课程简介：</span>
-	</p>
-	</div>
-	<div class="video" width="320" height="240" controls>
-		<video >
-			<source src="./video/example.mp4" type="video/mp4">
-			<source src="" type="">
-		</video>
-		
-		
-		
-		
-		<div></div>
-		
-		<object id="MediaPlayer"
-		classid="clsid:22D6F312-B0F6-11D0-94AB-0080C74C7E95" width="100%"
-		height="768" standby="Loading Windows Media Player components…"
-		type="application/x-oleobject"
-		codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=6,4,7,1112">
-		<param name="FileName" value="/LearnSwimmingWeb/WebContent/video/Wildlife.wmv">
-		<param name="AutoStart" value="true">
-		<param name="ShowControls" value="true">
-		<param name="BufferingTime" value="2">
-		<param name="ShowStatusBar" value="true">
-		<param name="AutoSize" value="true">
-		<param name="InvokeURLs" value="false">
-		<param name="AnimationatStart" value="1">
-		<param name="TransparentatStart" value="1">
-		<param name="EnableFullScreenControls " value="true">
-        <param name="PlayCount" value="1">
-		<param name="Loop" value="1">
-		<embed type="application/x-mplayer2" src="路径" name="MediaPlayer"
-			autostart="1" showstatusbar="1" showdisplay="1" showcontrols="1"
-			loop="0" videoborder3d="0"
-			pluginspage="http://www.microsoft.com/Windows/MediaPlayer/"
-			width="800" height="600"></embed>
-	</object>
-		
-		
-		
-		
-		
-		
-		
-	</div>
+
+
+
+
+
+
+	<div></div>
+
+	<object id="NSPlay" width=200 height=180
+		classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95"
+		codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab&#35;Version=6,4,5,715"
+		standby="Loading Microsoft Windows Media Player components..."
+		type="application/x-oleobject" align="right" hspace="5">
+		<!-- ASX File Name -->
+		<param name="AutoRewind" value=1>
+		<param name="FileName" value="xxxxxx.wmv">
+		<!-- Display Controls
+			-->
+		<param name="ShowControls" value="1">
+		<!-- Display Position Controls -->
+		<param name="ShowPositionControls" value="0">
+		<!-- Display Audio Controls -->
+		<param name="ShowAudioControls" value="1">
+		<!-- Display Tracker Controls -->
+		<param name="ShowTracker" value="0">
+		<!-- Show Display -->
+		<param name="ShowDisplay" value="0">
+		<!-- Display Status Bar -->
+		<param name="ShowStatusBar" value="0">
+		<!-- Display Go To Bar -->
+		<param name="ShowGotoBar" value="0">
+		<!-- Display Controls -->
+		<param name="ShowCaptioning" value="0">
+		<!-- Player Autostart -->
+		<param name="AutoStart" value=1>
+		<!-- Animation at Start -->
+		<param name="Volume" value="-2500">
+		<param name="AnimationAtStart" value="0">
+		<!-- Transparent at Start
+			-->
+		<param name="TransparentAtStart" value="0">
+		<!-- Do not allow a change in display size -->
+		<param name="AllowChangeDisplaySize" value="0">
+		<!-- Do not allow scanning -->
+		<param name="AllowScan" value="0">
+		<!-- Do not show contect menu on right mouse click -->
+		<param name="EnableContextMenu" value="0">
+		<!-- Do not allow playback toggling on mouse click -->
+		<param name="ClickToPlay" value="0">
+	</object> <embed src="./video/Wildlife.wmv" loop="true" width="200" height="150">
 	<div class="left">
 		<ul id="myTab" class="nav nav-tabs">
 			<li class="active"><a href="#home" data-toggle="tab">章节</a></li>
@@ -220,21 +202,21 @@ function cancelsubscribe(unid){
 		</ul>
 		<div id="myTabContent" class="tab-content">
 			<div class="tab-pane fade in active" id="home">
-				<div >
-				<strong>第一章</strong>
-				<ul>
-					<li>。。。</li>
-					<li>。。。</li>
-					<li>。。。</li>
-					<li>。。。</li>
-				</ul>
-				<strong>第二章</strong>
-				<ul>
-					<li>。。。</li>
-					<li>。。。</li>
-					<li>。。。</li>
-					<li>。。。</li>
-				</ul>
+				<div>
+					<strong>第一章</strong>
+					<ul>
+						<li>。。。</li>
+						<li>。。。</li>
+						<li>。。。</li>
+						<li>。。。</li>
+					</ul>
+					<strong>第二章</strong>
+					<ul>
+						<li>。。。</li>
+						<li>。。。</li>
+						<li>。。。</li>
+						<li>。。。</li>
+					</ul>
 				</div>
 			</div>
 			<div class="tab-pane fade" id="ios">
@@ -251,10 +233,13 @@ function cancelsubscribe(unid){
 						<span class="head-portrait">头像 </span>
 						<p class="user-name" name="username">用户名</p>
 						<div class="comments" name="comments">评论</div>
+						<span class="glyphicon glyphicon-thumbs-up"
+							style="color: rgb(140, 140, 140);" onclick=""> </span> <span
+							class="glyphicon glyphicon-thumbs-down"
+							style="color: rgb(140, 140, 140);"> </span>
+						<hr>
 					</div>
-					<hr>
-				</div>
-				<!-- <div class="tab-pane fade" id="jmeter">
+					<!-- <div class="tab-pane fade" id="jmeter">
 			<p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
 		</div>
 		<div class="tab-pane fade" id="ejb">
@@ -262,31 +247,28 @@ function cancelsubscribe(unid){
 				Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic
 				等）的 J2EE 上。</p>
 		</div> -->
+				</div>
 			</div>
-		</div>
 
-		<script>
-			$(function() {
-				$('#myTab .active a').tab('show');
-			});
-		</script>
-
-		<div class="teacher right">
-			<hr>
-			<div>
-				<span class="head-portrait">头像 </span><span class="teacher-name"
-					name="teachername">XX老师</span><br>
-				<p class="position"></p>
-				<div class="tips" name="tips">课程贴士</div>
-			</div>
+			<script>
+				$(function() {
+					$('#myTab .active a').tab('show');
+				});
+			</script>
 		</div>
+	</div>
+	<div class="teacher right">
+		<hr>
+		<div>
+			<span class="head-portrait">头像 </span><span class="teacher-name"
+				name="teachername">XX老师</span><br>
+			<p class="position"></p>
+			<div class="tips" name="tips">课程贴士</div>
+		</div>
+	</div>
+	<p></p>
 	</section>
 
-	<footer>
-	
-
-
-	</footer>
+	<footer> </footer>
 </body>
-</html>
 </html>
