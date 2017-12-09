@@ -14,8 +14,7 @@ public class dianzandao implements idianzandao {
 	@Override
 	public dianzanorfandui goodComment(int uid,int ccid) throws SQLException, ClassNotFoundException{
 		String strSelect="select * from dianzanorfanhui where uid='"+uid+"' and ccid='"+ccid+"'";
-		dianzanorfandui userdz=new dianzanorfandui();
-				
+		dianzanorfandui userdz=new dianzanorfandui();		
 		String strInsert="insert into dianzanorfanhui values('"+uid+"','"+ccid+"','1')";
 		String strUpdate1="update dianzanorfanhui set judge=0 where uid='"+uid+"' and ccid='"+ccid+"'";
 		String strUpdate2="update dianzanorfanhui set judge=1 where uid='"+uid+"' and ccid='"+ccid+"'";

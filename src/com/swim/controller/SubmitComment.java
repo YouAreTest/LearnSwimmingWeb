@@ -39,7 +39,6 @@ public class SubmitComment extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.sendRedirect("index");
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

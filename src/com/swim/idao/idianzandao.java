@@ -9,5 +9,4 @@ public interface idianzandao {
 	//public dianzanorfandui DianZan(User user)throws ClassNotFoundException, SQLException;
 	//µ„‘ﬁ∆¿¬€
     public dianzanorfandui goodComment(int uid,int ccid) throws SQLException, ClassNotFoundException;
-    
 }

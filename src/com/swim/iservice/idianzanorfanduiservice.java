@@ -8,5 +8,4 @@ public interface idianzanorfanduiservice {
 	public int goodComment(int uid,int ccid) throws SQLException, ClassNotFoundException;
 	//·´¶ÔÆÀÂÛ
 	public int badComment(int uid,int ccid) throws SQLException, ClassNotFoundException;
-
 }
