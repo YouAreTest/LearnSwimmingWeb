@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.head-portrait {
+	float: left;
+	background-color: yellow;
+	display: inline-block;
+	height: 45px;
+	width: 45px;
+	border-radius: 23px;
+	line-height: 45px;
+	text-align: center;
+	
+}
