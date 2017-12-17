@@ -1,0 +1,10 @@
+@charset "UTF-8";
+.foot {
+	height: 94px;
+	background: linear-gradient(#696868, #4c4b4b);
+	position: relative;
+	top: 200px;
+	color:white;
+	padding: 24px;
+	text-align:center;
+}

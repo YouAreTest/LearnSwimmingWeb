@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+#login {
+	width: 50%;
+	/*background-color: aliceblue;*/
+	height: 210px;
+	margin: 0 auto;
+	position: fixed;
+	top: 154px;
+	left: 348px;
+	z-index: 6;
+}
+
+#login form {
+	position: relative;
+	margin: 0 auto;
+	width: 452px;
+	background: linear-gradient(#efefef, #eae9e9, #eaeaea, #d5d6d6);
+	height: 270px;
+	display: none;
+	z-index: 1;
+}
+
+#register {
+	width: 50%;
+	/*background-color: aliceblue;*/
+	height: 210px;
+	margin: 0 auto;
+	position: fixed;
+	top: 154px;
+	left: 348px;
+	height: 0;
+	z-index: 6;
+}
+
+#register form {
+	position: relative;
+	margin: 0 auto;
+	width: 452px;
+	background: linear-gradient(#efefef, #eae9e9, #eaeaea, #d5d6d6);
+	height: 340px;
+	display: none;
+	z-index: -1;
+}
+
+#register form div {
+	height: 300px;
+	padding: 10px;
+}
+
+#register form div p {
+	text-align: right;
+	padding-right: 38px;
+	color: #6f6f6f
+}
+
+.userid {
+	padding-left: 10px;
+	width: -webkit-fill-available;
+}
+
+.password {
+	padding-left: 10px;
+	width: -webkit-fill-available;
+}
+
+.prompt {
+	width: 120px;
+	height: 80px;
+	background: red;
+	position: relative;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.prompt:before {
+	content: "";
+	position: absolute;
+	right: 100%;
+	top: 20px;
+	width: 0;
+	height: 0;
+	border-top: 13px solid transparent;
+	border-right: 26px solid red;
+	border-bottom: 13px solid transparent;
+}
+
+#id_prompt {
+	top: 67px;
+	height: 37px;
+	left: 373px;
+	width: 210px;
+	position:absolute;
+}
+
+#pwd2_prompt {
+	height: 37px;
+    width: 197px;
+    left: 373px;
+    /* background-color: blue; */
+    top: 221px;
+    position: absolute;
+}
+
+#pwd_prompt {
+	height: 37px;
+	width: 197px;
+	left: 373px;
+	/* background-color: yellowgreen; */
+	top: 171px;
+	position: absolute;
+}
+
+#name_prompt {
+	height: 37px;
+	width: 197px;
+	left: 373px;
+	/* background-color: yellowgreen; */
+	top: 121px;
+	position: absolute;
+}

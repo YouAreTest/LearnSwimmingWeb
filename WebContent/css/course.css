@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.course {
+	width: 280px;
+	height: 330px;
+	position: absolute;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 1px 3px 9px #c1c1c1;
+}
+
+.course:hover {
+	box-shadow: 1px 1px 4px #afafaf;
+	cursor: pointer;
+}
+
+.course:nth-of-type(1) {
+	top: 770px;
+	left: 46px;
+}
+
+.course:nth-of-type(2) {
+	top: 770px;
+	left: 372px;
+}
+
+.course:nth-of-type(3) {
+	top: 770px;
+	left: 698px;
+}
+
+.course:nth-of-type(4) {
+	top: 770px;
+	left: 1024px;
+}
+
+.course:nth-of-type(5) {
+	top: 1170px;
+	left: 46px;
+}
+
+.course:nth-of-type(6) {
+	top: 1170px;
+	left: 372px;
+}
+
+.course:nth-of-type(7) {
+	top: 1170px;
+	left: 698px;
+}
+
+.course:nth-of-type(8) {
+	top: 1170px;
+	left: 1024px;
+}
+
+.Choose-course h2 {
+	position: absolute;
+	top: 682px;
+	left: 614px;
+	font-family: "微软雅黑";
+	letter-spacing: 2px;
+}
+
+.Choose-course p {
+	position: absolute;
+	top: 1526px;
+	left: 1250px;
+}
+
+.course a{
+	display:inline-block;
+	width: 280px;
+	height: 330px;
+}
+#Choose-course {
+	position: absolute;
+	top: 682px;
+	left: 57px;
+	top: 600px;
+	left: 60px;
+}
+
+section>a h2:hover {
+	color: #a7bcd0;
+}
+
+section>span:hover {
+	color: #a7bcd0;
+}
