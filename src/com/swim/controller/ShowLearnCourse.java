@@ -12,22 +12,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.swim.domain.CourseComment;
+import com.swim.domain.Course;
 import com.swim.domain.User;
-import com.swim.iservice.icommentservice;
-import com.swim.service.commentservice;
+import com.swim.iservice.ilearncourseservice;
+import com.swim.service.learncourseservice;
 
 /**
- * Servlet implementation class SubmitComment
+ * Servlet implementation class ShowLearnCourse
  */
-@WebServlet("/SubmitComment")
-public class SubmitComment extends HttpServlet {
+@WebServlet("/ShowLearnCourse")
+public class ShowLearnCourse extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SubmitComment() {
+    public ShowLearnCourse() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,67 +37,44 @@ public class SubmitComment extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("index");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		HttpSession session=request.getSession();
-		icommentservice ics=new commentservice();
-		String content=request.getParameter("comments");
+		ilearncourseservice ilc=new learncourseservice();
+		List<Course>course2=new ArrayList<Course>();		
 		int ctid=(int)session.getAttribute("ctid");
-		
 		User u=(User)session.getAttribute("User");
 		if(u==null){
 			System.out.println("ƒ˙ªπŒ¥µ«¬º£°");
 			response.sendRedirect("Login.jsp");
 			return;
 		}
-		CourseComment cc=new CourseComment();
-		cc.setUid(u.getUid());
-		
-		cc.setCtid(ctid);
-		cc.setContent("content");
-		CourseComment comment=null;
-		try{
-			comment=ics.submitComment(cc);
-		}catch(ClassNotFoundException | SQLException e){
-			response.sendRedirect("  ");
-			System.out.println(" ß∞‹");
+		try {
+			course2=ilc.showcoursebyctid(ctid);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("œ‘ ælearnCourse ß∞‹");
 			return;
-		}
-		if(comment!=null){
-			System.out.println("¡Ù—‘≥…π¶");
-			List<CourseComment> cc2=new ArrayList<CourseComment>();
-			try {
-				cc2=ics.showCommentbypage(ctid);
-			} catch (ClassNotFoundException | SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			/*for(CourseComment cc2s:cc2) {
-			for(int i=0;i<cc2.lastIndexOf(cc2);i++) {	
-				request.setAttribute("sex1",cc2s[i]);
-			}
-			}
-			*/
-			if(cc2!=null) {
-			request.setAttribute("commentlist", cc2);
 			
-			response.sendRedirect("    ?ctid="+ctid);
-			}
-			else {
-				System.out.println(" ‰≥ˆ∆¿¬€ ß∞‹");
-			}
-			return;
 		}
-		
+		if(course2!=null)
+		{
+			request.setAttribute("LearnCourseList", course2);
+			request.getRequestDispatcher("LearnCourse.jsp").forward(request,response);
+		}
+		else{
+			System.out.println("∑µªÿlearnCourse ß∞‹");
+		}
+		return;
 	}
 
 }

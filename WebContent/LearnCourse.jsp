@@ -473,7 +473,7 @@ hr {
 			<div class="tab-pane fade" id="ios">
 				<div class="post-comment">
 
-					<form action="">
+					<form action="SubmitComment">
 						<span class="head-portrait">头像 </span>
 						<textarea cols="4" rows="5"></textarea>
 						<input type="submit" value="发表评论">
