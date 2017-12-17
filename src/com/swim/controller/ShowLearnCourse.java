@@ -50,7 +50,7 @@ public class ShowLearnCourse extends HttpServlet {
 		HttpSession session=request.getSession();
 		ilearncourseservice ilc=new learncourseservice();
 		List<Course>course2=new ArrayList<Course>();		
-		int ctid=(int)session.getAttribute("ctid");
+		int ctid=Integer.parseInt(request.getParameter("ctid")); 
 		User u=(User)session.getAttribute("User");
 		if(u==null){
 			System.out.println("Äú»¹Î´µÇÂ¼£¡");
