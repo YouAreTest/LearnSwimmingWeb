@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
+
 <link rel="stylesheet"
 	href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -12,8 +13,13 @@
 <script
 	src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="./js/login.js"></script>
-<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 <link rel="stylesheet" href="./css/login.css">
+<link rel="stylesheet" href="./css/register.css">
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/footer.css">
+<link rel="stylesheet" href="./css/Input.css">
+<link rel="stylesheet" href="./css/course.css">
+<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 	(function($) {
 		$(function() {
@@ -21,7 +27,7 @@
 		});
 
 		$(document).ready(function() {
-			
+
 			$(".login").click(function() {
 				$("#login form ").show();
 			});
@@ -68,13 +74,13 @@
 					"width" : wid
 				}, "fast");
 			});
-		};
-		
+		}
+		;
+
 		$(document).ready(function() {
-			var topMain = $("#header").height() + 20//是头部的高度加头部与nav导航之间的距离
 			var nav = $(".nav");
 			$(window).scroll(function() {
-				if ($(window).scrollTop() > topMain) {//如果滚动条顶部的距离大于topMain则就nav导航就添加类.nav_scroll，否则就移除
+				if ($(window).scrollTop() > 300) {//如果滚动条顶部的距离大于topMain则就nav导航就添加类.nav_scroll，否则就移除
 					nav.addClass("nav_scroll");
 				} else {
 					nav.removeClass("nav_scroll");
@@ -90,80 +96,21 @@
 	padding: 0;
 }
 
+.nav_scroll {
+	position: fixed;
+	width: 100%;
+	background-color: blue;
+	margin: 0;
+	left: 0;
+	top: 0;
+}
+
 a {
 	text-decoration: none;
 }
 
-.trapezoid {
-	border-bottom: 100px solid red;
-	border-left: 50px solid transparent;
-	border-right: 50px solid transparent;
-	height: 0;
-	width: 100px;
-}
-
-.banner {
-	width: 100%;
-	height: 70px;
-	/*background-color: yellow;*/
-}
-
-.nav-box {
-	width: 252px;
-	/* float: right; */
-	/* background-color: darkgray; */
-	margin: 0 auto;
-	background-color: aliceblue;
-	/* background-color: black; */
-	height: 34px;
-	float: left;
-	position: relative;
-	top: 20px;
-	left: 50px;
-}
-
-.nav-box ul {
-	list-style: none;
-}
-
-.nav-box ul li {
-	float: left;
-	font-size: 14px;
-	font-family: "微软雅黑";
-	height: 30px;
-	line-height: 30px;
-	padding: 0 12px;
-	/*  background-color: #F5F5F5;*/
-}
-
-.nav-box ul li a, .banner>p a {
-	color: blue;
-}
-
-.nav-box ul li a, .banner>p a:hover {
-	color: blue;
-	text-decoration: none;
-}
-
-.nav-box .nav-line {
-	background: none repeat scroll 0 0 #35C4FD;
-	bottom: 0;
-	font-size: 0;
-	height: 2px;
-	left: 0;
-	line-height: 2px;
-	position: absolute;
-	width: 52px;
-}
-
-.banner>p {
-	position: absolute;
-	top: 25px;
-	left: 1207px;
-}
-
 .background {
-	background-image: url(image/index/214774.jpg);
+	background-image: url(image/index/back.png);
 	background-size: 100% 100%;
 	height: 650px;
 	width: 100%;
@@ -173,154 +120,64 @@ a {
 	/*filter:blur(10px);*/
 }
 
-#login {
-	width: 50%;
-	/*background-color: aliceblue;*/
-	height: 210px;
-	margin: 0 auto;
-	position: fixed;
-	top: 154px;
-	left: 348px;
-}
-
-#login form {
-	position: relative;
-	margin: 0 auto;
-	width: 452px;
-	background: linear-gradient(#efefef, #eae9e9, #eaeaea, #d5d6d6);
-	height: 270px;
-	display: none;
-	z-index: 1;
-}
-
-#register {
-	width: 50%;
-	/*background-color: aliceblue;*/
-	height: 210px;
-	margin: 0 auto;
-	position: fixed;
-	top: 154px;
-	left: 348px;
-	height: 0;
-}
-
-#register form {
-	position: relative;
-	margin: 0 auto;
-	width: 452px;
-	background: linear-gradient(#efefef, #eae9e9, #eaeaea, #d5d6d6);
-	height: 340px;
-	display: none;
-	z-index: -1;
-}
-
-form div {
-	height: 300px;
-	padding: 10px;
-}
-
-td input {
-	height: 36px;
-	width: 250px;
-	margin-bottom: 10px;
-	font-size: 16px;
-	line-height: 1;
-	color: #777;
-	background: #FCFCFC;
-	border: 1px solid #CCC;
-	border-radius: 20px;
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .05);
-	-webkit-transition: color .2s linear, border-color .3s linear;
-	outline: none;
-	-webkit-apperance: normal;
-}
-
-td input:visited {
-	display: inline-block;
-	padding: 0 10px;
-	height: 36px;
-	font-size: 16px;
-	line-height: 1;
-	color: #777;
-	background: #FCFCFC;
-	border: 1px solid #CCC;
-	border-radius: 3px;
-	width: 250px;
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, .05);
-	-webkit-transition: color .2s linear, border-color .3s linear;
-}
-
-form div p {
-	text-align: right;
-	padding-right: 38px;
-	color: #6f6f6f
-}
-
-.userid {
-	padding-left: 10px;
-	width: -webkit-fill-available;
-}
-
-.password {
-	padding-left: 10px;
-	width: -webkit-fill-available;
-}
-
-.prompt {
-	width: 120px;
-	height: 80px;
-	background: red;
-	position: relative;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-
-.prompt:before {
-	content: "";
+section h1 {
 	position: absolute;
-	right: 100%;
-	top: 20px;
-	width: 0;
-	height: 0;
-	border-top: 13px solid transparent;
-	border-right: 26px solid red;
-	border-bottom: 13px solid transparent;
+	left: 200px;
+	font-size: 80px;
+	font-family: fantasy;
+	letter-spacing: 5px;
+	text-shadow: 2px 2px 13px #9e7f68;
+	top: 165px;
+	color: white;
 }
 
-#id_prompt {
-	top: 67px;
-	height: 37px;
-	left: 373px;
-	width: 197px;
+section h2 {
+	position: absolute;
+	top: 477px;
+	font-family: fantasy;
+	color: #ffffff;
+	left: 616px;
+	text-shadow: 1px 1px 8px #635050;
+	letter-spacing: 1px;
 }
 </style>
 </head>
 <body>
 	<header> <!-- <div class="trapezoid"></div> -->
-
+	<div id="header"></div>
 
 	<div class="banner">
 		<div class="nav-box">
 			<ul>
-				<li class="cur"><a href="#">主页</a></li>
-				<li><a href="#">课程</a></li>
-				<li><a href="#">讨论区</a></li>
-				<li><a href="#">精彩文章</a></li>
+				<li class="cur"><a href="./myIndex.jsp">主页</a></li>
+				<li><a href="./ChooseCourse.jsp">课程</a></li>
+				<li><a href="./Luntan.jsp">讨论区</a></li>
+
 
 			</ul>
 			<div class="nav-line"></div>
 		</div>
 		<p>
-			<a class="login" href="#">登录</a>|<a class="register" href="#">注册</a>
+			&nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-user"
+				style="color: rgb(140, 140, 141); font-size: 14px;"></span><a
+				class="login" href="#">&nbsp;登录</a>&nbsp;|&nbsp;<a class="register"
+				href="#">注册</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		</p>
 	</div>
 	</header>
 	<section>
 	<div class="background"></div>
+	<h1>
+		Swimming?<br>Just take it easy
+	</h1>
+	<span class="glyphicon glyphicon-chevron-down"
+		style="color: rgb(247, 223, 137); font-size: 60px; position: absolute; top: 400px; left: 653px; text-shadow: 1px 1px 13px #403718;">
+	</span> <span class="glyphicon glyphicon-chevron-down"
+		style="color: rgb(255, 255, 255); font-size: 60px; position: absolute; top: 435px; left: 653px; text-shadow: 0px 1px 11px #563939;">
+	</span> <a href="#Choose-course"><h2>Start now</h2></a>
 	<div id="login">
 
-		<form action="#" method="post" onsubmit="return checkForm();">
+		<form action="#" method="post" onsubmit="return check_login();">
 			<div align="center">
 				<a class="close"><span class="glyphicon glyphicon-remove-sign"
 					style="color: rgb(140, 140, 140); position: fixed; top: 165px; left: 880px; font-size: 20px; z-index: 2">
@@ -348,8 +205,7 @@ form div p {
 					</tr>
 
 					<tr>
-						<td class="ti"><input class="button" type="submit" value="登录"
-							onclick="check_login()"></td>
+						<td class="ti"><input class="button" type="submit" value="登录"></td>
 
 					</tr>
 				</table>
@@ -363,7 +219,7 @@ form div p {
 
 	<div id="register">
 
-		<form action="#" method="post" onsubmit="return checkForm();">
+		<form action="#" method="post" onsubmit="return check_register();">
 			<div align="center">
 				<a class="close"><span class="glyphicon glyphicon-remove-sign"
 					style="color: rgb(140, 140, 140); position: fixed; top: 165px; left: 880px; font-size: 20px; z-index: 2">
@@ -378,15 +234,15 @@ form div p {
 
 						<td><input type="text" size="20" id="userid1" name="userid"
 							maxlength="20" placeholder="请输入您的账号（长度4~16）" value=""
-							onblur="checkId();"
+							onblur="checkId1();"
 							style="padding-left: 10px; width: -webkit-fill-available;" /></td>
 
 					</tr>
 					<tr>
 
-						<td><input type="text" size="20" id="userid1" name="userid"
-							maxlength="20" placeholder="请输入您的用户名" value=""
-							onblur="checkId();"
+						<td><input type="text" size="20" id="username1"
+							name="username" maxlength="20" placeholder="请输入您的用户名" value=""
+							onblur="checkName();"
 							style="padding-left: 10px; width: -webkit-fill-available;" /></td>
 
 					</tr>
@@ -402,28 +258,62 @@ form div p {
 					<tr>
 
 						<td><input type="password" placeholder="请确认密码"
-							name="userpassword" value="" size="20" id="password2"
+							name="userpassword2" value="" size="20" id="password2"
 							maxlength="20" onblur="checkPwd2();"
 							style="padding-left: 10px; width: -webkit-fill-available;" /></td>
 
 					</tr>
 
 					<tr>
-						<td class="ti"><input class="button" type="submit" value="注册"
-							onclick="checkForm2()"></td>
+						<td class="ti"><input class="button" type="submit" value="注册"></td>
 
 					</tr>
 				</table>
 				<div id="id_prompt" class="id"></div>
 				<div id="pwd_prompt" class="pwd"></div>
-				<div id="id1_prompt"></div>
+				<div id="name_prompt"></div>
 				<div id="pwd1_prompt"></div>
 				<div id="pwd2_prompt"></div>
 			</div>
 		</form>
 	</div>
+	<p class="test"></p>
+	<div class="Choose-course">
+		<p id="Choose-course" class="slide"></p>
+		<h2>精彩课程</h2>
+		<div class="course">
+			<a href="./LearnCourse.jsp"></a>
+		</div>
+		<div class="course">
+			<a href="./LearnCourse.jsp"></a>
+		</div>
+		<div class="course">
+			<a href="./LearnCourse.jsp"></a>
+		</div>
+		<div class="course">
+			<a href="./LearnCourse.jsp"></a>
+		</div>
+		<div class="course">
+			<a href="./LearnCourse.jsp"></a>
+		</div>
+		<div class="course">
+			<a href="./LearnCourse.jsp"></a>
+		</div>
+		<div class="course">
+			<a href="./LearnCourse.jsp"></a>
+		</div>
+		<div class="course">
+			<a href="./LearnCourse.jsp"></a>
+		</div>
+
+		<p>
+			<a href="ChooseCourse.jsp">更多>></a>
+		</p>
+	</div>
 
 	</section>
-	<footer> </footer>
+	<div class="foot" style="top: 1564px;">
+	支持我们
+	</div>
 </body>
 </html>

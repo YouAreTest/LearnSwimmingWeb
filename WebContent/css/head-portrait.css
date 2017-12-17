@@ -1,12 +1,13 @@
 @charset "UTF-8";
+
 .head-portrait {
 	float: left;
-	background-color: yellow;
+	background-color: white;
 	display: inline-block;
-	height: 45px;
-	width: 45px;
+	height: 46px;
+	width: 46px;
 	border-radius: 23px;
 	line-height: 45px;
 	text-align: center;
-	
+	box-shadow: 1px 1px 2px #dadada;
 }
